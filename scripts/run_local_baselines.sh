@@ -11,10 +11,8 @@ MODELS=(
   "mlx-community/Qwen2.5-0.5B-Instruct-4bit"
   "mlx-community/Qwen2.5-1.5B-Instruct-4bit"
   "mlx-community/Llama-3.2-3B-Instruct-4bit"
-  "mlx-community/Qwen3-4B-Instruct-2507-4bit"
-  "mlx-community/Qwen2.5-7B-Instruct-4bit"
 )
-ANCHOR_MODELS=("mlx-community/Qwen3-4B-Instruct-2507-4bit" "mlx-community/Qwen2.5-7B-Instruct-4bit")
+ANCHOR_MODELS=("mlx-community/Llama-3.2-3B-Instruct-4bit")
 
 run_split () {  # model split n
   local slug; slug=$(echo "$1" | tr '/' '_')

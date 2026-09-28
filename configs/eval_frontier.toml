@@ -1,0 +1,29 @@
+# Frontier-model baseline via Prime Inference (needs wallet funds: prime wallet).
+# 35 items = one per template. Run once per split:
+#   uv run eval @ configs/eval_frontier.toml
+#   uv run eval @ configs/eval_frontier.toml --env.taskset.split heldout
+# Swap the model with -m, e.g. -m openai/gpt-5.4 or -m anthropic/claude-sonnet-5.
+model = "deepseek/deepseek-v4-pro"
+num_tasks = 35
+num_rollouts = 1
+push = false
+max_concurrent = 8
+output_dir = "results/runs"
+
+[sampling]
+temperature = 0.0
+max_tokens = 8192        # frontier models reason at length; the local runs used 4096
+
+[env.taskset]
+id = "neuro-reasoning"
+seed = 0
+split = "train"
+
+[env.agent]
+max_turns = 1
+
+[env.agent.harness]
+id = "null"
+
+[env.agent.runtime]
+type = "subprocess"

@@ -27,7 +27,7 @@ def test_extract(reply, expected):
     ("boolean", "yes", "Yes.", 0, 1), ("boolean", "no", "no, because", 0, 1),
     ("boolean", "yes", "no", 0, 0), ("boolean", "yes", "maybe", 0, 0),
     ("choice", "d", "d", 0, 1), ("choice", "d", "(d) subject identity leakage", 0, 1),
-    ("choice", "d", "D.", 0, 1), ("choice", "d", "b", 0, 0), ("choice", "a", "all of them", 0, 0),
+    ("choice", "d", "D.", 0, 1), ("choice", "d", "<d>", 0, 1), ("integer", "42", "<42>", 0, 1), ("choice", "d", "b", 0, 0), ("choice", "a", "all of them", 0, 0),
     ("ordering", "c,a,b", "C, A, B", 0, 1), ("ordering", "c,a,b", "C -> A -> B", 0, 1),
     ("ordering", "c,a,b", "C,A,B (because filtering first)", 0, 1),
     ("ordering", "c,a,b", "A, C, B", 0, 0), ("ordering", "c,a,b", "C, A", 0, 0),

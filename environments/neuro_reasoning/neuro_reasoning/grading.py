@@ -38,6 +38,8 @@ def grade(answer_type: str, gold: str, pred: str | None, *, tolerance: float = 0
     if pred is None:
         return 0.0
     p = pred.strip().rstrip(".").lower()
+    if len(p) >= 2 and p[0] in "<[{" and p[-1] in ">]}":  # "<d>" copied from the <value> placeholder
+        p = p[1:-1].strip()
     if answer_type == "integer":
         x = parse_number(p)
         return float(x is not None and x == int(gold))

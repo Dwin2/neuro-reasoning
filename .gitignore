@@ -1,0 +1,15 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+# eval outputs (large; summaries live in results/*.csv and docs/)
+outputs/
+results/runs/
+results/logs/
+results_progress.log

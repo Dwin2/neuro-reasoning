@@ -1,0 +1,25 @@
+# Local baseline eval. Override on the CLI, e.g.:
+#   uv run eval @ configs/eval_local.toml -m <model> --env.taskset.split heldout
+model = "Qwen/Qwen3.5-4B"
+num_tasks = 350          # 10 items x 35 templates
+num_rollouts = 1
+push = false             # default is true (uploads every run to your Prime dashboard)
+max_concurrent = 16
+
+[sampling]
+temperature = 0.0
+max_tokens = 4096
+
+[env.taskset]
+id = "neuro-reasoning"
+seed = 0
+split = "train"          # train | heldout | anchor
+
+[env.agent]
+max_turns = 1
+
+[env.agent.harness]
+id = "null"              # plain chat; the default "bash" harness would give the model a shell
+
+[env.agent.runtime]
+type = "subprocess"      # default "prime" provisions a cloud micro-VM per rollout

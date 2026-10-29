@@ -1,4 +1,4 @@
-# neuro-reasoning workspace
+# Neuro-reasoning
 
 A procedurally generated RL environment of EEG BCI reasoning tasks found at: https://app.primeintellect.ai/dashboard/environments/dwin2/neuro-reasoning. 
 

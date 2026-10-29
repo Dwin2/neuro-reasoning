@@ -1,7 +1,6 @@
 # neuro-reasoning workspace
 
-Source for the `neuro-reasoning` environment on the Prime Intellect Environments Hub, plus its
-tests, baseline runs, and writeup.
+A procedurally generated RL environment of EEG BCI reasoning tasks found at: https://app.primeintellect.ai/dashboard/environments/dwin2/neuro-reasoning. 
 
 | Path | What it is |
 |---|---|
@@ -16,7 +15,7 @@ tests, baseline runs, and writeup.
 | `docs/RESULTS.md` | baseline results and writeup |
 | `drafts/` | the original v0 draft, kept for reference |
 
-## Common commands
+## Commands
 
 ```bash
 uv sync                                           # install workspace + editable environment
@@ -27,14 +26,4 @@ uv run eval @ configs/eval_local.toml -m <model>  # eval via Prime Inference (ne
 scripts/run_local_baselines.sh 175                # local baselines (Apple silicon)
 uv run python scripts/analyze.py                  # tables into results/*.csv
 prime env push neuro-reasoning --visibility PRIVATE   # publish (run from this directory)
-```
-
-Read five generated items for a template:
-
-```bash
-uv run python -c "
-from neuro_reasoning.templates import REGISTRY, build
-fn = REGISTRY['filter_design']['min_sampling_rate']
-for s in range(5):
-    it = build(fn, s, 'train'); print(it.question, '\n=>', it.answer, '|', it.rationale, '\n')"
 ```

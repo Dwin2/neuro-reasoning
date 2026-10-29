@@ -1,9 +1,8 @@
 # neuro-reasoning
 
-Procedurally generated, exactly verified reasoning tasks on EEG brain-computer-interface
-experimental design: sampling and filtering, power analysis, train/test split hygiene, epoch
-rejection, and preprocessing pipeline order. No LLM judge. Every answer is computed by the
-generator and checked by exact match.
+A procedurally generated RL environment of EEG BCI reasoning tasks: sampling and filtering, power
+analysis, train/test split hygiene, epoch rejection, and preprocessing pipeline order. No LLM
+judge. Every answer is computed by the generator and checked by exact match.
 
 - **Environment ID:** `neuro-reasoning`
 - **verifiers API:** v1 (`verifiers>=0.3.1`)

@@ -1,7 +1,7 @@
 [project]
 name = "neuro-reasoning"
-version = "0.1.0"
-description = "Procedurally generated, exactly verified reasoning tasks on EEG brain-computer-interface experimental design."
+version = "0.1.2"
+description = "A procedurally generated RL environment of EEG BCI reasoning tasks."
 tags = ["neuroscience", "eeg", "bci", "science", "reasoning", "single-turn", "eval", "train"]
 requires-python = ">=3.11"
 dependencies = ["verifiers>=0.3.1"]
